@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swa");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "IBM Plex Mono";
+  background-color: #141414;
+}
+
+/* NAVIGATION MENU */
+nav {
+  width: 100%;
+  height: 80px;
+  background-color: #4520ab;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 92px;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.menu ul li {
+  display: flex;
+  align-items: center;
+  margin-right: 41px;
+  height: 78px;
+  white-space: nowrap;
+}
+
+.menu li.current {
+  border-bottom: 2px solid #ffbc5b;
+}
+
+.menu li.current a {
+  color: #ffbc5b;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  color: #ffbc5b;
+}
+
+.menu svg path {
+  stroke: rgba(255, 255, 255);
+}
+
+.menu svg {
+  opacity: 0.3;
+}
+
+.menu svg:hover {
+  opacity: 1;
+}
+
+.menu svg:hover path {
+  opacity: 1;
+  stroke: #ffbc5b;
+}
+
+.search-icon {
+  display: none;
+}
+
+.profile {
+  margin-right: 117px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* CONTENT */
+.content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+/* FILMS SECTIONS */
+.last-films,
+.recommended-films {
+  display: flex;
+  flex-flow: column;
+  margin-top: 52px;
+}
+
+.last-films-header,
+.recommended-films-header {
+  display: flex;
+  align-items: center;
+}
+
+.last-films h2,
+.recommended-films h2 {
+  color: #ffbc5b;
+  font-size: 30px;
+  line-height: 39px;
+  letter-spacing: -0.04em;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.last-films-header::after,
+.recommended-films-header::after {
+  align-items: center;
+  content: url("../img/arrow-small.png");
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* CARDS */
+.last-films-cards,
+.recommended-films-cards {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.last-films-cards::after,
+.recommended-films-cards::after {
+  align-items: center;
+  content: url("../img/arrow-big.png");
+  margin-left: 20px;
+  margin-bottom: 63px;
+}
+
+.link {
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.last-film-thumb {
+  width: 322px;
+  height: 182px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.recommended-film-thumb {
+  width: 322px;
+  height: 485px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.last-film-card .raiting,
+.recommended-film-card .raiting {
+  position: absolute;
+  width: 51px;
+  height: 30px;
+  z-index: 111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffbc5b;
+  color: #000;
+  border-radius: 6px;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 23px;
+  margin: 12px 0 0 12px;
+}
+
+.last-film-body,
+.recommended-film-body {
+  padding-top: 16px;
+}
+
+.last-film-body h3,
+.recommended-film-body h3 {
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+  color: #989898;
+}
+
+.last-film-body p,
+.recommended-film-body p {
+  margin: 8px 0 0 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #515151;
+}
+
+/* ANIMATION */
+.last-film-thumb,
+.recommended-film-thumb {
+  transition: all 0.2s ease-in-out;
+}
+
+.last-film-card:hover .last-film-thumb,
+.recommended-film-card:hover .recommended-film-thumb {
+  transform: scale(1.02);
+}
+
+.last-film-card:hover .last-film-body h3,
+.recommended-film-card:hover .recommended-film-body h3 {
+  color: #fff;
+}
+
+/* MEDIA QUERIES */
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1400px) {
+  .logo {
+    margin-left: 36px;
+  }
+
+  .logo img {
+    width: 116px;
+  }
+
+  .profile {
+    margin-right: 36px;
+  }
+
+  .profile img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .last-films, .recommended-films {
+    margin-top: 40px;
+  }
+
+  .last-films-header h2, .recommended-films-header h2 {
+    font-size: 26px;
+    margin: 0 0 23px 0;
+  }
+
+  .last-films-header::after, .recommended-films-header::after {
+    margin-top: -12px;
+  }
+
+  .last-films-cards a:nth-child(3), .recommended-films-cards a:nth-child(3) {
+    display: none;
+  }
+
+  .last-films-cards::after, .recommended-films-cards::after {
+    margin-left: 10px;
+  }  
+}
+
+/* MOBILE */
+@media (max-width: 768px) { 
+  body {
+    min-width: 360px;
+  }
+
+  nav {
+    justify-content: flex-end;
+  }
+
+  .logo {
+    margin-left: 16px;
+    width: 100%;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .search-icon {
+    display: block;
+    margin-right: 24px;
+  }
+
+  .search-icon img {
+    height: 26px;
+  }
+
+  .profile {
+    margin-right: 24px;
+  }
+
+  .profile img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    margin-right: 16px;
+  }
+
+  .menu-icon img {
+    width: 24px;
+    height: 16px;
+  }
+  
+  .last-films, .recommended-films {
+    margin-top: 28px;
+  }
+
+  .last-films-header h2, .recommended-films-header h2 {
+    font-size: 24px;
+    margin: 0 0 22px 0;
+  }
+
+  .last-films-header::after, .recommended-films-header::after {
+    content: "";
+  }
+
+  .last-films-cards a:nth-child(2), .last-films-cards a:nth-child(3), .recommended-films-cards a:nth-child(2), .recommended-films-cards a:nth-child(3) {
+    display: none;
+  }
+
+  .last-films-cards::after, .recommended-films-cards::after {
+    width: 9px;
+    height: 24px;
+    content: url(../img/arrow-small.png);
+    margin-left: 0;    
+  }
+
+  .last-film-thumb {
+    width: 297px;
+    height: 168px;
+  }
+
+  .recommended-film-thumb {
+    width: 297px;
+    height: 447px;
+  }
+}
